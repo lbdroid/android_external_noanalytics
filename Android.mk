@@ -1,9 +1,9 @@
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
+LOCAL_SRC_FILES := noAnalytics-0.2.1$(COMMON_JAVA_PACKAGE_SUFFIX)
 LOCAL_MODULE := libGoogleAnalyticsV2
 LOCAL_MODULE_TAGS := optional
-LOCAL_SRC_FILES := $(call all-java-files-under, src)
-LOCAL_NO_STANDARD_LIBRARIES := true
-LOCAL_JAVA_LIBRARIES := core
-include $(BUILD_JAVA_LIBRARY)
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE_PATH := $(TARGET_OUT)/fake_packages/$(LOCAL_SRC_FILES)
+include $(BUILD_PREBUILT)
